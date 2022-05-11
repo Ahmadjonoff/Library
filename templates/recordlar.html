@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordlar</title>
+</head>
+<body>
+    <h1>Recordlar ro`yxati:</h1>
+    <br>
+
+    {% for record in Records %}
+        <h2>{{ record.FIO }} ({{ record.kitob }})</h2>
+    {% endfor %}
+
+    <form action="/recordlar/" method="post"> {% csrf_token %}
+        {{ forma }}
+        <button type = "submit"> Qo`shish </button>
+    </form>
+
+    <br>
+    <a href="/"> <h1>Bosh sahifaga qaytish </h1> </a>
+</body>
+</html>

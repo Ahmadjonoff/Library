@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit the Book</title>
+</head>
+<body>
+    <form action="/edit_book/{{ book.id }}/" method="post"> {% csrf_token %}
+        <input type="text" name = "nom" value = {{ book.nomi }}>
+        <select name="muallif">
+            {% for m in mualliflar %}
+                <option value="{{ m.id }}">{{ m }}</option>
+            {% endfor %}
+        </select>
+        <input type="number" name = "son" value = {{ book.sahifa }}>
+        <input type="text" name = "janr" value = {{ book.janr }}>
+        <button type="submit"> Topshirish </button>
+    </form>
+</body>
+</html>

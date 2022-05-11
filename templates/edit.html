@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Author</title>
+</head>
+<body>
+     <form action="/muallif_edit/{{ auth.id }}/" method="post"> {% csrf_token %}
+        <input type="text" name = "ism" value = {{ auth.ismi }}>
+        <input type="text" name = "fam" value = {{ auth.familiyasi }}>
+<!--        <input type="date" name = "sana" value ={{ auth.tugilgan_sanasi }}>-->
+        <input type="number" name = "son" value ={{ auth.asarlar_soni }}>
+        <button type="submit"> Topshirish </button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar</title>
+</head>
+<body>
+    <h1>Kitoblar ro`yxati: </h1>
+    {% for kitob in kitoblarim %}
+        <h2>{{ kitob.nomi }} ({{ kitob.janr }})</h2>
+        <a href="/kitoblar/{{ kitob.id }}/"><button>O`chirish</button></a>
+        <a style="margin-left: 10px" href="/edit_book/{{ kitob.id }}/"><button>Tahrirlash</button></a>
+    {% endfor %}
+    <br>
+    <br>
+
+    <form action="/kitoblar/" method="post"> {% csrf_token %}
+        {{ forma }}
+        <button type="submit"> Qo`shish </button>
+    </form>
+
+    <br>
+    <a href="/"> <h1>Bosh sahifaga qaytish </h1> </a>
+</body>
+</html>

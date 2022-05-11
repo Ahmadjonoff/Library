@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mualliflar</title>
+</head>
+<body>
+    <h1>Mualliflar ro`yxati:</h1>
+    {% for yozuvchi in Yozuvchilar %}
+        <h2>{{ yozuvchi.ismi }} {{ yozuvchi.familiyasi }}</h2>
+        <a href="/muallif_edit/{{ yozuvchi.id }}/">
+            <button>Tahrirlash</button>
+        </a>
+    {% endfor %}
+    <br>
+
+    <form action="/mualliflar/" method="post"> {% csrf_token %}
+        <input type="text" name = "ism" placeholder="Muallif ismi">
+        <input type="text" name = "fam" placeholder="Muallif familiyasi">
+        <input type="date" name = "sana" placeholder="Tug`ilgan sanasi">
+        <input type="number" name = "son" placeholder="Asarlar soni">
+        <button type="submit"> Qo`shish </button>
+    </form>
+
+<br>
+<a href="/"> <h1>Bosh sahifaga qaytish </h1> </a>
+</body>
+</html>
